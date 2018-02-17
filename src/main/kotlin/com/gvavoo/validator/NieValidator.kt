@@ -3,9 +3,7 @@ package com.gvavoo.validator
 class NieValidator : IdValidator() {
     val nieRegex = "[XYZ]\\d{7}[A-Z]"
 
-    override fun isIdStructureValid(nie: String): Boolean {
-        return (nie.matches(Regex(nieRegex)))
-    }
+    override fun isIdStructureValid(nie: String): Boolean = nie.matches(Regex(nieRegex))
 
     override fun calculateRemainderLetterOfId(nie: String): Char {
         val firstMappedDigit: String =
